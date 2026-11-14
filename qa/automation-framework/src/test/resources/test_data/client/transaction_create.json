@@ -1,0 +1,24 @@
+[
+  {
+    "id": "tx_buy_2",
+    "quantity": 2
+  },
+  {
+    "id": "tx_buy_all_stock",
+    "quantity": 10
+  },
+  {
+    "id": "tx_exceeds_stock",
+    "quantity": 999
+  },
+  {
+    "id": "tx_unknown_user",
+    "userId": 2000000000,
+    "quantity": 1
+  },
+  {
+    "id": "tx_unknown_product",
+    "productId": 2000000000,
+    "quantity": 1
+  }
+]

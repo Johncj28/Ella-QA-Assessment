@@ -1,0 +1,27 @@
+[
+  {
+    "id": "product_01",
+    "name": "QA Product {{uid}}",
+    "price": 49.99,
+    "quantity": 10
+  },
+  {
+    "id": "product_out_of_stock",
+    "name": "QA OOS {{uid}}",
+    "price": 5,
+    "quantity": 0,
+    "status": "OUT_OF_STOCK"
+  },
+  {
+    "id": "product_update",
+    "name": "QA Product renamed {{uid}}",
+    "price": 49.99,
+    "quantity": 25
+  },
+  {
+    "id": "product_ghost",
+    "name": "Ghost {{uid}}",
+    "price": 1,
+    "quantity": 1
+  }
+]

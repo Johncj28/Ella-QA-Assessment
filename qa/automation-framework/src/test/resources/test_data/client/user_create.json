@@ -1,0 +1,22 @@
+[
+  {
+    "id": "user_01",
+    "name": "QA User {{uid}}",
+    "email": "qa.user.{{uid}}@example.test"
+  },
+  {
+    "id": "user_02",
+    "name": "QA User 2 {{uid}}",
+    "email": "qa.user2.{{uid}}@example.test"
+  },
+  {
+    "id": "user_update",
+    "name": "Renamed {{uid}}",
+    "email": "qa.renamed.{{uid}}@example.test"
+  },
+  {
+    "id": "user_ghost",
+    "name": "Ghost",
+    "email": "ghost.{{uid}}@example.test"
+  }
+]

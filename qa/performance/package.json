@@ -1,0 +1,34 @@
+{
+  "name": "ella-api-performance-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "k6 performance tests for the Ella API (users, products, transactions) with Grafana reporting",
+  "scripts": {
+    "api:start": "node local-env/start-api.mjs",
+    "api:reset": "node local-env/start-api.mjs --reset",
+    "grafana:up": "docker compose -f grafana/docker-compose.yml up -d",
+    "grafana:down": "docker compose -f grafana/docker-compose.yml down",
+    "report": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1",
+    "report:smoke": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1 -Api all -Type smoke",
+    "report:user": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1 -Api user",
+    "report:product": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1 -Api product",
+    "report:transaction": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1 -Api transaction",
+    "smoke": "k6 run tests/user/smoke.js && k6 run tests/product/smoke.js && k6 run tests/transaction/smoke.js",
+    "user:smoke": "k6 run tests/user/smoke.js",
+    "user:load": "k6 run tests/user/load.js",
+    "user:stress": "k6 run tests/user/stress.js",
+    "user:soak": "k6 run tests/user/soak.js",
+    "product:smoke": "k6 run tests/product/smoke.js",
+    "product:load": "k6 run tests/product/load.js",
+    "product:stress": "k6 run tests/product/stress.js",
+    "product:soak": "k6 run tests/product/soak.js",
+    "transaction:smoke": "k6 run tests/transaction/smoke.js",
+    "transaction:load": "k6 run tests/transaction/load.js",
+    "transaction:stress": "k6 run tests/transaction/stress.js",
+    "transaction:soak": "k6 run tests/transaction/soak.js",
+    "validate": "node -e \"const fs=require('fs');const {execSync}=require('child_process');for(const a of ['user','product','transaction'])for(const t of fs.readdirSync('tests/'+a))execSync('k6 inspect tests/'+a+'/'+t,{stdio:'ignore'}),console.log('ok tests/'+a+'/'+t)\""
+  },
+  "devDependencies": {
+    "embedded-postgres": "17.5.0-beta.15"
+  }
+}

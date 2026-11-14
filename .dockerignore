@@ -1,0 +1,21 @@
+# Keep the build context small and free of secrets.
+node_modules
+dist
+coverage
+.git
+.github
+.vscode
+.idea
+*.log
+
+# Secrets/config must be injected at runtime, never copied into an image layer.
+.env
+.env.*
+!.env.example
+
+# Not needed to build the API image
+qa
+devops
+*.md
+Dockerfile
+docker-compose*.yml

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Without this file logback defaults to DEBUG, and Serenity/Cucumber flood the console
+  with internal event-bus lines. Requests/responses are still in the Serenity report.
+  Need more detail? Change level="WARN" below to "DEBUG".
+-->
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- this framework's own logs -->
+    <logger name="starter" level="INFO"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
